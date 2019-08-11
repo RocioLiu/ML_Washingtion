@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import random
 import matplotlib.pyplot as plt
-from sklearn_linear_model import LinearRegression
+
 
 # 1. Load the data
 sales = pd.read_csv('./ML_Washington/kc_house_data.csv')
