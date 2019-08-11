@@ -84,12 +84,25 @@ X_test2 = np.array(test_data[['sqft_living', 'bedrooms', 'bathrooms', 'lat', 'lo
 X_test3 = np.array(test_data[['sqft_living', 'bedrooms', 'bathrooms', 'lat', 'long','bed_bath_rooms','bedrooms_squared',
                              'log_sqft_living', 'lat_plus_long']])
 y_test = np.array(test_data['price'])
+
+
+# 10. Quiz Question: Which model (1, 2 or 3) had the lowest RSS on TRAINING data?
+RSS_train1 = np.sum((y_train - lin_model1.predict(X_train1))**2) # 1192904103182387.0
+RSS_train2 = np.sum((y_train - lin_model2.predict(X_train2))**2) # 1181181618528809.2
+RSS_train3 = np.sum((y_train - lin_model3.predict(X_train3))**2) # 1117144064129143.2
+# model 3
+
+# 11. Now using your three estimated models compute the RSS on the Testing data
 y_pred1 = lin_model1.predict(X_test1)
 y_pred2 = lin_model2.predict(X_test2)
 y_pred3 = lin_model3.predict(X_test3)
 
-RSS1 = np.sum((y_test - y_pred1)**2)
-RSS2 = np.sum((y_test - y_pred2)**2)
-RSS3 = np.sum((y_test - y_pred3)**2)
+RSS1 = np.sum((y_test - y_pred1)**2) # 224667449003307.97
+RSS2 = np.sum((y_test - y_pred2)**2) # 222301300021457.6
+RSS3 = np.sum((y_test - y_pred3)**2) # 212219059971295.0
 
-# 10. Quiz Question: Which model (1, 2 or 3) had the lowest RSS on TRAINING data?
+# 12. Quiz Question: Which model (1, 2, or 3) had the lowest RSS on TESTING data?
+# model 3
+
+# 13. Did you get the same answer for 9 and 11? Think about why this might be the case.
+# Yes
